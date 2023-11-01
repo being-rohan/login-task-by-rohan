@@ -7,14 +7,14 @@ const password = document.getElementById("password")
 const apicall = ele => {
     let pro = new Promise((resolve, reject) => {
         setTimeout(() => {
-            if ("rohanpanchal2gmail.com" === ele.email && 12345678 ===ele.password) {
+            if ("rohanpanchal2@gmail.com" === ele.email && "12345678" === ele.password) {
                 resolve(`login succesfully`)
             } else {
                 reject('invalid username or password')
             }
 
-        },2000)
-        
+        }, 1500)
+
     })
     return pro
 }
@@ -34,17 +34,17 @@ const onsubmit = eve => {
             Swal.fire({
                 icon: 'success',
                 title: eve,
-                timer:1500
-              })
+                timer: 1500
+            })
         })
         .catch((rej) => {
             Swal.fire({
                 icon: 'error',
                 title: rej,
-                timer:1500
-              })
+                timer: 1500
+            })
         })
-        .finally(()=>{
+        .finally(() => {
             login1.reset()
         })
 }
@@ -55,4 +55,4 @@ const onsubmit = eve => {
 
 
 
-login1.addEventListener('submit' ,onsubmit)
+login1.addEventListener('submit', onsubmit)
